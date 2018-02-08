@@ -1,0 +1,41 @@
+var json = [
+    {
+        name : '魅蓝 Note5',
+        number : 6
+    },
+    {
+            name : '魅蓝 Note5',
+            number : 6
+        }
+];
+
+<ul class="service-search-menu-list">
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝 Note5</span>
+            <span class="service-search-menu-num">约 6 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝 E2</span>
+            <span class="service-search-menu-num">约 6 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝 Note6</span>
+            <span class="service-search-menu-num">约 7 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝手机</span>
+            <span class="service-search-menu-num">约 85 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝5</span>
+            <span class="service-search-menu-num">约 78 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝X</span>
+            <span class="service-search-menu-num">约 56 种</span>
+        </li>
+        <li class="service-search-menu-item">
+            <span class="service-search-menu-name">魅蓝6</span>
+            <span class="service-search-menu-num">约 64 种</span>
+        </li>
+    </ul>

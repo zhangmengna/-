@@ -1,0 +1,78 @@
+.user-downmenu {
+    font-size: 12px;
+    padding-top: 4px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    display: none;/* 默认隐藏 */
+}
+.user-downmenu-list {
+    position: relative;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 6px 0;
+    width: 96px;
+    border: 1px solid #efefef;
+    user-select: none;
+}
+.user-downmenu-list::before,.user-downmenu-list::after {
+    position: absolute;
+    content: '';
+    top: -6px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #efefef;
+}
+.user-downmenu-list::after {
+    top: -5px;
+    border-bottom-color: #fff;
+}
+.user-downmenu-link {
+    position: relative;
+    display: block;
+    color: #666;
+    padding: 7px 0;
+    background-color: transparent;
+}
+
+.service-search-menu {
+    width: 180px;
+    border-radius: 0 0 20px 20px;
+    background-color: #fff;
+    margin-top: -1px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 12px;
+}
+.service-search-menu-list {
+    margin: 15px 0 10px;
+    list-style-type: none;
+    padding: 0;
+}
+.service-search-menu-item {
+    height: 30px;
+    padding: 0 15px;
+    overflow: hidden;
+    line-height: 30px;
+    cursor: pointer;
+    color: #999;
+    background-color: transparent;
+    user-select: none;
+    outline: 0;
+}
+.service-search-menu-name {
+    display: inline-block;
+    vertical-align: middle;
+    width: 96px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.service-search-menu-num {
+    float: right;
+}

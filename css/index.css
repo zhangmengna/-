@@ -1,0 +1,48 @@
+html {
+    line-height: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "PingFang SC", "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", Arial, Helvetica, sans-serif, "\5B8B\4F53";
+    font-size: 14px;
+    min-width: 1240px;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1240px;
+    margin: 0 auto;
+    /* 高度 - 由具体内容撑起（如果所有子元素设置浮动 - 高度塌陷） */
+    overflow: hidden;
+}
+
+.font {
+    font-style: normal;
+}
+
+/* 引入网络字体 - 使用字体系列时，脱离当前操作系统所限制的字体样式 */
+@font-face {
+    /* 定义网络字体的字体系列名称 */
+    font-family: layout-font;
+    /* 引入指定的网络字体文件 */
+    src: url(../font/iconfont-7fe3aaa151.eot);
+    src: url(../font/iconfont-7fe3aaa151.eot#iefix) format("embedded-opentype"), url(../font/iconfont-d91c6d8c6e.woff) format("woff"), url(../font/iconfont-43e1f7b40d.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: home-font;
+    src: url(../font/iconfont-e7aa55706f.eot);
+    src: url(../font/iconfont-e7aa55706f.eot#iefix) format("embedded-opentype"), url(../font/iconfont-a4acbf4ccb.woff) format("woff"), url(../font/iconfont-e10a2a74bc.ttf) format("truetype"), url(../font/iconfont-85fb670cf6.svg#iconfont) format("svg")
+}
