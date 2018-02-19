@@ -25,8 +25,10 @@ window.onload = function(){
         slideDown(user_downmenu,ctrl_height,ctrl_max_height);
     }
     user_login.onmouseout = function(){
-        // 将用户登录菜单隐藏
-        user_downmenu.style.display = 'none';
+        setTimeout(function(){
+            // 将用户登录菜单隐藏
+            user_downmenu.style.display = 'none';
+        },500);
     }
 
     // 搜索框的动态提示列表效果
@@ -109,6 +111,173 @@ window.onload = function(){
             // search_menu.style.height = ul_margin_top + sumHeight + ul_margin_bottom + 'px';
         },3000);
     }
+
+    // 页面主轮播图的效果
+    var slick_index= 0;
+    // 1. 向左移动的按钮
+    var slick_prev = document.getElementById('slick_prev');
+    slick_prev.onclick = function(){
+        var slider_list = document.getElementById('slider_list');
+        var slider_list_style = getStyle(slider_list);
+        var slider_list_left = parseInt(slider_list_style.left);
+        console.log(slider_list_left);
+
+        var slider_container = firstElementChild(slider_list);
+        var slider_container_style = getStyle(slider_container);
+        var slider_container_width = parseInt(slider_container_style.width);
+
+        var slick_dots = document.getElementById('slick_dots');
+        var slick_dots_list = slick_dots.children;
+        for (var i=0;i<slick_dots_list.length;i++){
+            var slick_dots_item = slick_dots_list[i];
+            slick_dots_item.removeAttribute('class');
+        }
+
+        slider_list_left -= slider_container_width;
+
+        slick_index++;
+
+        if (slick_index === slick_dots_list.length){
+            slick_index = 0;
+        }
+        console.log(slick_index);
+        if (slider_list_left === -parseInt(slider_list_style.width)){
+            slider_list_left = 0;
+        }
+
+        slider_list.style.left = slider_list_left + 'px';
+
+        slick_dots_list[slick_index].setAttribute('class','slick-ative');
+    }
+    // 2. 向右移动的按钮
+    var slick_next = document.getElementById('slick_next');
+    slick_next.onclick = function(){
+        var slider_list = document.getElementById('slider_list');
+        var slider_list_style = getStyle(slider_list);
+        var slider_list_left = parseInt(slider_list_style.left);
+        console.log(slider_list_left);
+
+        var slider_container = firstElementChild(slider_list);
+        var slider_container_style = getStyle(slider_container);
+        var slider_container_width = parseInt(slider_container_style.width);
+
+        var slick_dots = document.getElementById('slick_dots');
+        var slick_dots_list = slick_dots.children;
+        for (var i=0;i<slick_dots_list.length;i++){
+            var slick_dots_item = slick_dots_list[i];
+            slick_dots_item.removeAttribute('class');
+        }
+
+        if (slider_list_left === 0){
+            slider_list_left = -parseInt(slider_list_style.width);
+        }
+
+        slider_list_left += slider_container_width;
+
+        if (slick_index === 0){
+            slick_index = slick_dots_list.length;
+        }
+
+        slick_index--;
+
+        slider_list.style.left = slider_list_left + 'px';
+        console.log(slick_index);
+        slick_dots_list[slick_index].setAttribute('class','slick-ative');
+    }
+    // 3. 图片的导航器
+    var slick_dots = document.getElementById('slick_dots');
+    var slick_dots_list = slick_dots.children;
+    for (var i=0;i<slick_dots_list.length;i++){
+        var slick_dots_item = slick_dots_list[i];
+
+        var slick_dot = firstElementChild(slick_dots_item);
+        slick_dot.onmouseover = function(event){
+            // 当前触发事件的<div>元素 -> target
+            var target = event.target || event.srcElement;
+            var li = target.parentNode;
+
+            for (var j=0;j<slick_dots_list.length;j++){
+                var slick_dots_item = slick_dots_list[j];
+                // 利用当前目标<li>元素 -> 依次与循环中每一个进行比较
+                console.log(li == slick_dots_item);
+                if (li == slick_dots_item){
+                    slick_index = j;
+                }
+                slick_dots_item.removeAttribute('class');
+            }
+
+            li.setAttribute('class','slick-ative');
+            // 切换图片到对应的位置
+            var slider_list = document.getElementById('slider_list');
+
+            var slider_container = firstElementChild(slider_list);
+            var slider_container_style = getStyle(slider_container);
+            var slider_container_width = parseInt(slider_container_style.width);
+
+            slider_list.style.left = -(slick_index * slider_container_width) + 'px';
+        }
+    }
+    // 自动轮播效果
+    setInterval(function(){
+        var slider_list = document.getElementById('slider_list');
+        var slider_list_style = getStyle(slider_list);
+        var slider_list_left = parseInt(slider_list_style.left);
+        console.log(slider_list_left);
+
+        var slider_container = firstElementChild(slider_list);
+        var slider_container_style = getStyle(slider_container);
+        var slider_container_width = parseInt(slider_container_style.width);
+
+        var slick_dots = document.getElementById('slick_dots');
+        var slick_dots_list = slick_dots.children;
+        for (var i=0;i<slick_dots_list.length;i++){
+            var slick_dots_item = slick_dots_list[i];
+            slick_dots_item.removeAttribute('class');
+        }
+
+        slider_list_left -= slider_container_width;
+
+        slick_index++;
+
+        if (slick_index === slick_dots_list.length){
+            slick_index = 0;
+        }
+        console.log(slick_index);
+        if (slider_list_left === -parseInt(slider_list_style.width)){
+            slider_list_left = 0;
+        }
+
+        slider_list.style.left = slider_list_left + 'px';
+
+        slick_dots_list[slick_index].setAttribute('class','slick-ative');
+    },4000);
+
+    // 动态显示二级菜单
+    var menu_datas = [
+        {
+            "title" : "魅族手机",
+            "items" : [
+                { "img" : "imgs/Cgbj0Fl4NtOAU4aRAAvVzqN22Ug687.png", "text" : "PRO 7" },
+                { "img" : "imgs/Cgbj0Vl4OdOAGsDfAAuYs_pyDV0706.png", "text" : "PRO 7 Plus" },
+                { "img" : "imgs/Cix_s1g-ZXuAYp1LABY2I5awJck337.png80x80.jpg", "text" : "PRO 6 Plus" },
+                { "img" : "imgs/Cgbj0VjsfjmAJR0zAAqULbIBw-M571_180x180.png", "text" : "PRO 6s" }
+            ]
+        },
+        {
+            "title" : "魅蓝手机",
+            "items" : [
+                { "img" : "imgs/Cgbj0VnCGzWAWqh8AAwk2MA0gtk390.png", "text" : "魅蓝 6" },
+                { "img" : "imgs/Cgbj0FmdIJmAeVGmAAxAuuJkLGk921.png@480x480.jpg", "text" : "魅蓝 Note6" },
+                { "img" : "imgs/Cgbj0VkAUNmAeTU2AAklK6hJr4k492.png", "text" : "魅蓝 E2" },
+                { "img" : "imgs/Cgbj0FjsfnCAcnAJAAndI9Fz2pU498_180x180.png", "text" : "魅蓝 5s" },
+                { "img" : "imgs/Cix_s1hGE9KAJ1E-AAv78Kz1Hok651.png@240x240.jpg", "text" : "魅蓝 Note5" },
+                { "img" : "imgs/Cgbj0VjsfqyAVtTeAAtHG2nRyAc269_180x180.png", "text" : "魅蓝 E" },
+                { "img" : "imgs/CnQOjVg-ZwCAEthoAAj4ScedJ9k163.png@240x240.jpg", "text" : "魅蓝 X" },
+                { "img" : "imgs/Cgbj0VlSHwiAe5UBAAZIlvIJX5w205.png@240x240.jpg", "text" : "魅蓝 A5" }
+            ]
+        }
+    ]
+
     // 定义设置文本内容的浏览器兼容解决方案
     function setText(elem, value){
         if (elem.textContent){

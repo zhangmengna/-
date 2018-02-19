@@ -73,7 +73,7 @@
     <!-- 图片轮播效果 -->
     <div class="home-slider">
         <!-- 图片的容器 -->
-        <div class="home-slider-list">
+        <div id="slider_list" class="home-slider-list">
             <div class="home-slider-container">
                 <a class="home-slider-link" href="#">
                     <img class="home-slider-img" src="imgs/Cgbj0FnH53CAQs81AALB4QdADyk200.jpg">
@@ -111,15 +111,15 @@
             </div>
         </div>
         <!-- 向左的按钮 -->
-        <div class="slick-arrow slick-prev">
+        <div id="slick_prev" class="slick-arrow slick-prev">
             <i class="font font-prev"></i>
         </div>
         <!-- 向右的按钮 -->
-        <div class="slick-arrow slick-next">
+        <div id="slick_next" class="slick-arrow slick-next">
             <i class="font font-next"></i>
         </div>
         <!-- 图片的导航器 -->
-        <ul class="slick-dots">
+        <ul id="slick_dots" class="slick-dots">
             <li class="slick-ative"><div class="home-slider-dot"></div></li>
             <li><div class="home-slider-dot"></div></li>
             <li><div class="home-slider-dot"></div></li>
@@ -136,7 +136,7 @@
             <li class="home-menu-item">
                 <a class="home-menu-link" href="#">手机</a>
                 <!-- 二级菜单功能 -->
-                <div class="home-menu-child">
+                <!--<div class="home-menu-child">
                     <div class="home-menu-child-list">
                         <a href="#" class="home-menu-child-item title">魅族手机</a>
                         <a href="#" class="home-menu-child-item">
@@ -189,7 +189,7 @@
                             <div class="home-menu-child-text"></div>
                         </a>
                     </div>
-                </div>
+                </div>-->
             </li>
             <li class="home-menu-item">
                 <a class="home-menu-link" href="#">智能设备</a>
@@ -256,10 +256,10 @@
         <div class="home-hot-header">
             <div class="home-hot-title">热门推荐</div>
             <div class="home-hot-ctrl">
-                <div class="home-hot-ctrl-btn">
+                <div id="ctrl_btn_left" class="home-hot-ctrl-btn">
                     <i class="font font-prev1"></i>
                 </div>
-                <div class="home-hot-ctrl-btn">
+                <div id="ctrl_btn_right" class="home-hot-ctrl-btn">
                     <i class="font font-next1"></i>
                 </div>
             </div>

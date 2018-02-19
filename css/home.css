@@ -328,10 +328,6 @@
     z-index: 1;
     background-color: #fff;
 }
-.home-hot-product:hover{
-    border-color:red;
-    position:relative;
-}
 .home-product-link {
     display: block;
     height: 100%;
